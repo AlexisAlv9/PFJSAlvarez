@@ -1,0 +1,350 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+    
+
+
+:root{
+    --clr--main:#181716;
+    --clr--white: #F2F2F2;
+    --clr--card: #1a1d1d;
+    --clr-green: #0D0D0D;
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+.logo{
+    font-size: 26px; 
+    font-weight: bold; 
+    font-family: "Helvetica Neue", sans-serif; 
+    color: #ffffff; 
+    margin-bottom: 20px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    padding-left: 0px;
+
+}
+
+nav li {
+    margin-left: 0px;
+    padding: 30px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+.carrito-logo {
+    width: 40px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 4fr; 
+    
+    background-color: #f3f3f3;
+    padding-top: 0;
+}
+
+.sidebar {
+    padding: 2rem;
+    padding-right: 0;
+    position: sticky;
+    color: white;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+   background-color: var(--clr--main);
+
+}
+
+.main-content {
+    padding: 0px;
+    margin-top: 0px;
+    
+}
+
+.imagen-seccion img {
+    width: 100%;
+    height: 700px;
+    
+    margin-bottom: 0px;
+}
+
+
+
+/* estilos de card */
+
+
+.contenedor-productos {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 1rem;
+    
+    
+}
+
+.contenedor-productos img{
+    width: 300px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(232, 232, 232);
+    border-radius: 0.5rem;
+}
+
+.contenedor-productos img{
+    width: 290px;
+    height: 280px;
+    object-fit:cover ;
+    margin: 10px;   
+    transition: -0.1;
+    overflow: hidden;
+    border-radius: 0.5rem;
+}
+
+
+
+.contenedor-productos img:hover{
+    transform: scale(1.05);
+    
+}
+
+
+
+.informacion{
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+}
+/*
+.informacion h3{
+    color: var(--clr--card);
+    font-size: 20px;
+    font-weight: 600;
+}
+.informacion>h3 :first-child{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    color: var(--clr--card);
+}
+.informacion p{
+    font-size: 20px;
+    font-weight: 500;
+
+}
+.informacion p span{
+    font-size: 18px;
+    font-weight: 600;
+
+}
+*/
+.comprar{
+    background-color: rgb(43, 43, 44);
+    width: 100px;
+    height: 35px;
+    border-radius: 10px;
+    border: none;
+    font-size: 15px;
+    font-weight: 300;
+    cursor: pointer;
+    color: var(--clr--white);
+
+}
+
+.comprar:hover{
+    background-color: rgb(124, 124, 124);
+}
+
+/*estilo carrio*/
+
+
+/*carrito */
+
+.paginaCarrito{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    background-color: #1a1d1d;
+    width: 80%;
+    margin: 0 10px;
+    max-height: 88%;
+    color: white;
+    
+
+    position: fixed;
+    overflow: auto;
+    z-index: 9;
+    top: 12vh;
+
+}
+.pagina-header{
+        display: flex;
+        border: 0;
+        background-color: var(--clr-green);
+        padding: 1rem;
+        color:var(--clr--white);
+        text-transform: uppercase;
+        border-top-left-radius: 0.4rem;
+        border-bottom-left-radius: 0.4rem;
+       
+}
+.pagina-header-titulo{
+    font-size: 20px;
+    color: white;
+
+}
+
+.pagina-boton{
+    display: flex;
+    border: 0;
+    background-color: #1a1d1d;
+    padding: 0;
+    color:var(--clr--white);
+    text-transform: uppercase;
+    border-top-left-radius: 0.4rem;
+    border-bottom-left-radius: 0.4rem;
+    flex-direction: row-reverse;
+    font-size: 20px;
+   cursor: pointer;
+}
+
+.carrito-content img{
+    width: 250px;
+    height: 200px;
+}
+
+.carrito-content{
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--clr--card);
+    color: var(--clr--card);
+    padding: 0.5rem;
+    align-items: center;
+    font-size: 20px;
+    color: var(--clr--white);
+    border-radius: 0.5rem;
+
+}
+
+.total-compra{
+    display: flex;
+    border: 0;
+    background-color: var(--clr-green);
+    padding: 1rem; 
+    color:var(--clr--white);
+    text-transform: uppercase;
+    border-top-left-radius: 0.4rem;
+    border-bottom-left-radius: 0.4rem;
+}
+
+
+
+.eliminar-producto{
+    background-color: transparent;
+    border: 0;
+    font-size: 1.5rem;
+    color: var(--clr--white);
+    cursor: pointer;
+}
+
+.cantidad-carrito{
+    background-color: red;
+    color: white;
+    border-radius: 80% ;
+    position: absolute;
+    font-size: 25px;
+    left: 60px;
+    display: none;
+}
+
+
+/*
+.carrito-vacio{
+    color: var(--clr--card);
+    
+
+}
+.carrito-productos{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.carrito-producto{
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--clr--card);
+    color: var(--clr--card);
+    padding: 0.5rem;
+    align-items: center;
+    font-size: 20px;
+    color: var(--clr--white);
+    border-radius: 0.5rem;
+
+}
+
+.carrito-producto small{
+    font-size: 0.75rem;
+}
+
+
+.carrito-acciones{
+display: flex;
+justify-content: space-between;
+}
+
+.carrito-acciones-derecha{
+    display: flex;
+}
+.carrito-acciones-total{
+    display: flex;
+    border: 0;
+    background-color: var(--clr-green);
+    padding: 1rem; 
+    color:var(--clr--white);
+    text-transform: uppercase;
+    border-top-left-radius: 0.4rem;
+    border-bottom-left-radius: 0.4rem;
+}
+
+.carrito-acciones-vaciar{
+    border: 0;
+    background-color: var(--clr-green);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    color: red;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+.carrito-acciones-comprar{
+    border: 0;
+    background-color: var(--clr--main);
+    padding: 1rem;
+    
+    color: var(--clr--white);
+    text-transform: uppercase;
+    cursor: pointer;
+    border-top-right-radius: 0.4rem;
+    border-bottom-right-radius: 0.4rem;
+}
+
+.disabled{
+    display: none;
+}
+*/
