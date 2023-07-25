@@ -270,6 +270,7 @@ video{
     position: fixed;
     overflow: auto;
     z-index: 9;
+    display: none;
    
 }
 .pagina-header{

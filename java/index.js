@@ -7,7 +7,16 @@ const cantidadCarrito = document.getElementById ("cantidadCarrito");
     
 let carrito = JSON.parse(localStorage.getItem("carrito")) ||  [];
     
-
+function mostrarMensajeProductoAgregado() {
+    const mensajeProductoAgregado = document.getElementById("mensajeProductoAgregado");
+    mensajeProductoAgregado.textContent = "Producto agregado al carrito";
+    mensajeProductoAgregado.style.display = "block";
+  
+    // Ocultar el mensaje después de 2 segundos
+    setTimeout(() => {
+      mensajeProductoAgregado.style.display = "none";
+    }, 2000);
+  }
 
 
       function cargarProductos() {
