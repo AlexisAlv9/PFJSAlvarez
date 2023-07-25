@@ -17,7 +17,7 @@ let carrito = JSON.parse(localStorage.getItem("carrito")) ||  [];
          contenedorProductos.append(content);
 
          let comprar = document.createElement ("button");
-         comprar.innerText = "comprar"
+         comprar.innerText = "Agregar al carrito"
          content.append(comprar);
          comprar.className ="comprar";
 
