@@ -9,15 +9,13 @@ let carrito = JSON.parse(localStorage.getItem("carrito")) ||  [];
     
 
 
-const cargarProductos = async () => {
-    try {
-      const response = await fetch('data.json');
-      if (!response.ok) {
-        throw new Error('No se pudo obtener los datos de los productos.');
-      }
-  
-      const productos = await response.json();
-  
+
+      function cargarProductos() {
+        const contenedorProductos = document.getElementById("contenedorProductos");
+      
+        // Limpiar el contenedor antes de mostrar los productos
+        contenedorProductos.innerHTML = "";
+
       productos.forEach((contenido) => {
         let content = document.createElement("div");
         content.innerHTML = `
@@ -59,16 +57,33 @@ const cargarProductos = async () => {
           mostrarMensajeProductoAgregado();
         });
       });
-  
-    } catch (error) {
-      console.error('Error al cargar los productos:', error.message);
+
     }
-  };
+
+    
+
+     // Función para cargar los productos utilizando fetch
+function solicitarPrendas() {
+    fetch(URL)
+      .then((response) => {
+        if (response.status === 200) {
+          return response.json();
+        }
+      })
+      .then((data) => { productos.push(...data);
+       
+        cargarProductos();
+      })
+      .catch((error) => {
+        console.error("Error al cargar los productos:", error.message);
+      });
+  }
   
   // Llamar a la función para cargar los productos
-  cargarProductos();
-
-
+  solicitarPrendas();
+  
+  
+    
 
 
 
