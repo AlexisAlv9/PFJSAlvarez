@@ -5,6 +5,19 @@ const cantidadCarrito = document.getElementById ("cantidadCarrito");
     
 let carrito = JSON.parse(localStorage.getItem("carrito")) ||  [];
     
+
+const mostrarMensajeProductoAgregado = () => {
+    const mensajeProductoAgregado = document.createElement("div");
+    mensajeProductoAgregado.className = "mensaje-producto-agregado";
+    mensajeProductoAgregado.innerText = "Producto agregado al carrito";
+    document.body.appendChild(mensajeProductoAgregado);
+  
+    setTimeout(() => {
+      mensajeProductoAgregado.style.display = "none";
+    }, 2000);
+  };
+
+
     productos.forEach((contenido) => {
         let content = document.createElement ("div");
          content.innerHTML = `
@@ -42,6 +55,9 @@ let carrito = JSON.parse(localStorage.getItem("carrito")) ||  [];
         }
         carritoDisplay();
         guardarLocal();
+
+        // Mostrar el mensaje "Producto agregado al carrito"
+    mostrarMensajeProductoAgregado();
          });
     });
 
@@ -49,6 +65,13 @@ let carrito = JSON.parse(localStorage.getItem("carrito")) ||  [];
     const guardarLocal = () =>{
     localStorage.setItem("carrito", JSON.stringify(carrito));
 }
-    // get item
 
+
+//mobile 
+const btnMenu = document.querySelector('.btn-menu');
+const sidebar = document.querySelector('.sidebar');
+
+btnMenu.addEventListener('click', () => {
+  sidebar.classList.toggle('active');
+});
     

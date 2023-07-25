@@ -18,6 +18,11 @@ body {
     padding: 0;
     font-family: Arial, sans-serif;
 }
+.btn-menu {
+    display: none;
+}
+
+
 .logo{
     display: flex;
     flex-direction: column;
@@ -186,17 +191,15 @@ video{
     justify-content: center;
     background-color: rgb(232, 232, 232);
     border-radius: 0.5rem;
-}
-
-.contenedor-productos img{
-    width: 220px;
-    height: 220px;
     object-fit:cover ;
     margin: 10px;   
     transition: -0.1;
     overflow: hidden;
     border-radius: 0.5rem;
 }
+
+
+
 
 
 
@@ -236,10 +239,22 @@ video{
     background-color: rgb(124, 124, 124);
 }
 
-/*estilo carrio*/
+
 
 
 /*carrito */
+.mensaje-producto-agregado {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--clr--card);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    z-index: 10;
+    
+  }
 
 .paginaCarrito {
     display: flex;
@@ -373,13 +388,13 @@ video{
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
   .mensaje-compra {
-    background-color: var(--clr--main);
+    background-color: var(--clr--card);
     color: var(--clr--white);
     font-size: 18px;
     padding: 10px 20px;
     border-radius: 5px;
     position: absolute;
-   bottom: 40px;
+   bottom: 0px;
   }
 
   /*footer*/
@@ -396,3 +411,80 @@ video{
     margin: 5px;
     font-size: 14px;
   }
+ 
+ 
+ 
+
+
+  /* Estilos para el modo mobile */
+
+
+
+@media (max-width: 768px) {
+  .btn-menu {
+    display: block;
+    background-color: var(--clr--card);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 2;
+    font-size: 20px;
+  }
+
+  .sidebar {
+    
+    position: fixed;
+    top: 0;
+    right: -100%; 
+    height: 100%;
+    width: 200px; 
+    background-color: rgba(255, 255, 255, 0.9);
+    z-index: 2; 
+    transition: right 0.3s ease; 
+  }
+
+  .sidebar.active {
+    right: 0; 
+  }
+
+  .imagen-seccion {
+    position: relative;
+    z-index: 1; 
+  }
+
+  .titulo-uno,
+  .parrafo-uno,
+  .boton-comprar-ahora {
+    position: relative;
+    z-index: 2; 
+  }
+}
+
+@media (max-width: 768px) {
+.contenedor-productos img{
+    width: 150px;
+    height: 150px;}
+    }
+
+    @media (max-width: 768px) {
+
+        .imagen-seccion img {
+            width: 100%;
+            height: 450px;
+            margin-bottom: 0px;
+            padding-bottom: 0px;
+            
+        }
+        .boton-comprar-ahora {
+            font-size: 20px;
+            bottom: 330px;
+            
+            
+        }
+        
+    
+    }

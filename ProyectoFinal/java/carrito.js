@@ -1,10 +1,11 @@
 
-//verCarrito.addEventListener ("click", () => {
     
 const mensajeCarritoVacio = document.createElement("div");
 mensajeCarritoVacio.id = "carritoVacio";
 mensajeCarritoVacio.className = "carrito-vacio";
 mensajeCarritoVacio.innerText = "Tu carrito está vacío";
+
+
 
 const pintarCarrito = () => {
     paginaCarrito.innerHTML = "";
@@ -63,7 +64,7 @@ const pintarCarrito = () => {
     totalCompra.innerHTML = `total a pagar: ${total} $`;
     paginaCarrito.append(totalCompra);
 
- // Agregar botón "Comprar" con lógica para mostrar mensaje de agradecimiento
+ // Agregar botón "Comprar" mostrar mensaje de agradecimiento
  const botonComprar = document.createElement("button");
  botonComprar.innerText = "Comprar";
  botonComprar.className = "boton-comprar";
@@ -82,7 +83,7 @@ const pintarCarrito = () => {
      carritoDisplay();
      guardarLocal();
 
-     // Ocultar el mensaje de agradecimiento después de 1.5 segundos
+     // Ocultar el mensaje de agradecimiento después de 3.2 segundos
      setTimeout(() => {
        mensajeCompra.style.display = "none";
        pintarCarrito();
